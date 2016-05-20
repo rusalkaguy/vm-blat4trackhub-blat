@@ -6,6 +6,7 @@ wget -m https://data.genome.uab.edu/public/ucsc_track_hubs/hcmv_pub/
 #
 # per https://genome.ucsc.edu/goldenpath/help/hubQuickStartAssembly.html#blat
 # start 2 servers - one for translated, one for straight up
+mkdir -p logs
 
 # hcmv only for now
 GENOMES=$(find data.genome.uab.edu/public/ucsc_track_hubs/hcmv_pub -name "*.2bit")
