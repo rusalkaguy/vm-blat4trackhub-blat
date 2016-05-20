@@ -5,5 +5,7 @@ cd blat
 for F in FOOTER.txt blat gfClient gfServer; do
 	wget --timestamping  $URL/$F;
 done
+# make executable
+chmod +x blat gfClient gfServer
 
 
