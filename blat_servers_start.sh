@@ -32,6 +32,7 @@ mkdir -p logs
 #for x in $GENOMES; do ln -fs $x . ; done
 #GENOMES_2BIT=$(ls *.2bit)
 ROOTDIR=$PWD
+
 cd hcmv_pub/hh5Merlin2
 GENOME=$(basename $PWD)
 echo GENOME=$GENOME
@@ -39,5 +40,13 @@ GENOME_2BIT=$(find . -name "*.2bit")
 echo GENOME_2BIT=$GENOME_2BIT
 nohup $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost 17777 -trans       -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.pro.17777.log ${GENOME_2BIT} &
 nohup $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost 17779 -stepSize=5  -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.dna.17779.log ${GENOME_2BIT} &
+cd ..
 
-
+cd hcmv_pub/hh5BE_7_2011v1
+GENOME=$(basename $PWD)
+echo GENOME=$GENOME
+GENOME_2BIT=$(find . -name "*.2bit")
+echo GENOME_2BIT=$GENOME_2BIT
+nohup $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost 17781 -trans       -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.pro.17777.log ${GENOME_2BIT} &
+nohup $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost 17783 -stepSize=5  -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.dna.17779.log ${GENOME_2BIT} &
+cd ..
