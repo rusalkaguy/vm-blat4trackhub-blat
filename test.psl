@@ -3,4 +3,4 @@ psLayout version 3
 match	mis- 	rep. 	N's	Q gap	Q gap	T gap	T gap	strand	Q        	Q   	Q    	Q  	T        	T   	T    	T  	block	blockSizes 	qStarts	 tStarts
      	match	match	   	count	bases	count	bases	      	name     	size	start	end	name     	size	start	end	count
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-50	0	0	0	0	0	0	0	+	blat_test_hh5Merlin2	50	0	50	NC_006273v2	235646	183326	183376	1	50,	0,	183326,
+50	0	0	0	0	0	0	0	+	blat_test	50	0	50	NC_006273v2	235646	183326	183376	1	50,	0,	183326,
