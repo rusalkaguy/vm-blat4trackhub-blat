@@ -1,0 +1,12 @@
+# home dir stuff
+.bash*
+.cache
+.config
+.gitconfig
+.ssh/
+.viminfo
+# more specific stuff
+hcmv_pub/
+logs/
+ucsc_kent/2016-05-10/blat/
+
