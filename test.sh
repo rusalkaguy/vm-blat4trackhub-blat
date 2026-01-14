@@ -10,7 +10,7 @@ echo "========== gcClient localhost 17779 ============"
 echo "========== $outPsl ============"
 cat $outPsl
 echo "========== diff out.psl test.psl ========="
-diff -s $outPsl test.psl
+diff -s $outPsl test_expect.psl
 
 rm $outPsl
 
