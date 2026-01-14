@@ -9,4 +9,5 @@
 hcmv_pub/
 logs/
 ucsc_kent/2016-05-10/blat/
-
+# temp testing output
+test_out.psl
