@@ -4,7 +4,7 @@ cat <<EOF
 # Run a query against the server, check results. 
 #
 EOF
-BLAT_DIR=./ucsc_kent/2016-05-10/blat/
+BLAT_DIR=./ucsc_kent/2025-06-20/blat/
 IN_FA=test.fa
 OUT_PSL=test_out.psl
 EXPECT_PSL=test_expect.psl
