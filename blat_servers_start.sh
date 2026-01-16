@@ -1,3 +1,4 @@
+#!/bin/bash
 SERVER_EXE=ucsc_kent/2016-05-10/blat/gfServer
 HUB_URL=https://data.genome.uab.edu/public/ucsc_track_hubs/hcmv_pub
 # 
@@ -38,8 +39,8 @@ GENOME=$(basename $PWD)
 echo GENOME=$GENOME
 GENOME_2BIT=$(find . -name "*.2bit")
 echo GENOME_2BIT=$GENOME_2BIT
-nohup $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost 17777 -trans       -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.pro.17777.log ${GENOME_2BIT} &
-nohup $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost 17779 -stepSize=5  -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.dna.17779.log ${GENOME_2BIT} &
+$ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost 17777 -trans       -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.pro.17777.log ${GENOME_2BIT} &
+$ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost 17779 -stepSize=5  -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.dna.17779.log ${GENOME_2BIT} &
 popd
 
 pushd hcmv_pub/hh5BE_7_2011v1
@@ -47,6 +48,6 @@ GENOME=$(basename $PWD)
 echo GENOME=$GENOME
 GENOME_2BIT=$(find . -name "*.2bit")
 echo GENOME_2BIT=$GENOME_2BIT
-nohup $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost 17781 -trans       -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.pro.17777.log ${GENOME_2BIT} &
-nohup $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost 17783 -stepSize=5  -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.dna.17779.log ${GENOME_2BIT} &
+$ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost 17781 -trans       -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.pro.17777.log ${GENOME_2BIT} &
+$ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost 17783 -stepSize=5  -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.dna.17779.log ${GENOME_2BIT} &
 popd

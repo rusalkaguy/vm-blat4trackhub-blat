@@ -1,0 +1,19 @@
+[Unit]
+Description=blat genome application
+After=network.target
+
+[Service]
+# Specify the user the script will run as
+User=blat
+# Specify the path to your shell script
+ExecStart=/home/blat/blat_servers_start.sh
+ExecStop=/home/blat/blat_servers_stop.sh
+WorkingDirectory=/home/blat
+# Optional: restart the service if it fails
+#Restart=on-failure
+Restart=no
+Type=forking
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
