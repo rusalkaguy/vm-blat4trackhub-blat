@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 #!/bin/bash
 SERVER_EXE=ucsc_kent/2016-05-10/blat/gfServer
-=======
-SERVER_EXE=ucsc_kent/2025-06-20/blat/gfServer
->>>>>>> 1f5397c05340b9050aef9618486ab2a2f9a1ec92
 HUB_URL=https://data.genome.uab.edu/public/ucsc_track_hubs/hcmv_pub
 # 
 # mirror .2bit files from data.genome.uab.edu
@@ -45,10 +41,10 @@ GENOME_2BIT=$(find . -name "*.2bit")
 echo GENOME_2BIT=$GENOME_2BIT
 export PORT=17777
 echo  $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost $PORT -trans       -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.pro.$PORT.log ${GENOME_2BIT} 
-      $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost $PORT -trans       -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.pro.$PORT.log ${GENOME_2BIT} > log1.txt 2>&1 &
+      $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost $PORT -trans       -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.pro.$PORT.log ${GENOME_2BIT} > log1.txt 2>log1e.txt &
 export PORT=17779
 echo  $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost $PORT -stepSize=5  -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.dna.$PORT.log ${GENOME_2BIT} 
-      $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost $PORT -stepSize=5  -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.dna.$PORT.log ${GENOME_2BIT} > log2.txt 2&>1 &
+      $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost $PORT -stepSize=5  -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.dna.$PORT.log ${GENOME_2BIT} > log2.txt 2>log2e.txt &
 popd
 
 pushd hcmv_pub/hh5BE_7_2011v1
@@ -58,8 +54,8 @@ GENOME_2BIT=$(find . -name "*.2bit")
 echo GENOME_2BIT=$GENOME_2BIT
 export PORT=17781
 echo  $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost $PORT -trans       -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.pro.$PORT.log ${GENOME_2BIT} 
-      $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost $PORT -trans       -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.pro.$PORT.log ${GENOME_2BIT} > log3.txt 2&>1 &
+      $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost $PORT -trans       -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.pro.$PORT.log ${GENOME_2BIT} > log3.txt 2>log3e.txt &
 export PORT=17783
 echo  $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost $PORT -stepSize=5  -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.dna.$PORT.log ${GENOME_2BIT}
-      $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost $PORT -stepSize=5  -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.dna.$PORT.log ${GENOME_2BIT} > log4.txt 2&>1  &
+      $ROOTDIR/ucsc_kent/2016-05-10/blat/gfServer start localhost $PORT -stepSize=5  -seqLog -ipLog -log=$ROOTDIR/logs/$GENOME.dna.$PORT.log ${GENOME_2BIT} > log4.txt 2>log4e.txt &
 popd
